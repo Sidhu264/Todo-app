@@ -33,7 +33,10 @@ public class RestfulWebServicesApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
 					.allowedMethods("*")
-					.allowedOrigins("*");
+					.allowedOrigins(
+		                    "http://localhost:3000", 
+		                    "https://taupe-melba-1bcc65.netlify.app"
+		                );
 			}
 		};
 	}

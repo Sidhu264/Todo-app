@@ -1,14 +1,14 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:17-jdk-slim
+# Use official OpenJDK 21 base image
+FROM eclipse-temurin:21-jdk
 
-# Set the working directory in the container
+# Set working directory inside container
 WORKDIR /app
 
-# Copy the built jar from target/ folder into the container
+# Copy the JAR file into the container
 COPY target/*.jar app.jar
 
-# Expose port 8080
+# Expose the port the app runs on
 EXPOSE 8080
 
-# Run the jar file
+# Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
